@@ -8,9 +8,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/nome', (req, res) => {
-    const nome = req.query.nome || "visitante";
-    res.send(`Opa, bão ${nome}?`);   
+app.get('/temperatura', (req, res) => {
+    const temperatura = req.query.temperatura || "erro";
+    res.send(`${temperatura}°C`);   
 });
 
 app.listen(port,'0.0.0.0', () => {
