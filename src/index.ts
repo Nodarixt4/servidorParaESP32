@@ -10,7 +10,7 @@ app.use((req, res, next) => {
 
 app.get('/nome', (req, res) => {
     const nome = req.query.nome || "visitante";
-    res.send(`Opa, bão iae?`);   
+    res.send(`Opa, bão ${nome}?`);   
 });
 
 app.listen(port,'0.0.0.0', () => {
