@@ -4,6 +4,13 @@ import bodyParser from 'body-parser';
 const app = express();
 app.use(bodyParser.json());
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*'); // Permite todas as origens
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Permite métodos específicos
+    res.header('Access-Control-Allow-Headers', 'Content-Type'); // Permite cabeçalhos específicos
+    next();
+  });
+
 // Defina explicitamente o tipo de `valorArmazenado`
 let valorArmazenado: number | null = null; // Pode armazenar um número ou `null`
 
