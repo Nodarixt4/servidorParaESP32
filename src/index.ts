@@ -10,7 +10,6 @@ app.use((req, res, next) => {
     next();
 });
 
-
 // Endpoint para o ESP enviar a temperatura
 app.get('/setTemperatura', (req, res) => {
     const temperatura = String(req.query.temperatura || "erro");  // Garantir que seja uma string
@@ -23,6 +22,6 @@ app.get('/temperatura', (req, res) => {
     res.send(`${temperaturaAtual}°C`);  // Retorna a temperatura atual
 });
 
-app.listen(port,'0.0.0.0', () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`Rodando na porta ${port}`);
 });
